@@ -56,8 +56,14 @@ public class BasePage {
         return combo.getFirstSelectedOption().getText();
     }
 
+    /************** Botao **************/
+
+    public void clicarBotao(By by) {
+        getDriver().findElement(by).click();
+    }
+
     public void clicarBotao(String id) {
-        getDriver().findElement(By.id(id)).click();
+        clicarBotao(By.id(id));
     }
 
     public void clicarLink(String id) {
