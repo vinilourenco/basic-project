@@ -1,7 +1,6 @@
 package br.sp.vinilourenco.pages;
 
 import br.sp.vinilourenco.core.BasePage;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 
 public class ContasPage extends BasePage {
@@ -11,7 +10,7 @@ public class ContasPage extends BasePage {
     }
 
     public void salvar() {
-        clicarBotao(By.xpath("//button[.='Salvar']"));
+        clicarBotaoPorTexto("Salvar");
     }
 
     public String obterMensagemSucesso() {

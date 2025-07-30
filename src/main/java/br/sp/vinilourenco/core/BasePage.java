@@ -66,6 +66,10 @@ public class BasePage {
         clicarBotao(By.id(id));
     }
 
+    public void clicarBotaoPorTexto(String texto) {
+        clicarBotao(By.xpath("//button[.='"+texto+"']"));
+    }
+
     public void clicarLink(String id) {
         getDriver().findElement(By.linkText(id)).click();
     }
@@ -76,6 +80,10 @@ public class BasePage {
 
     public String obterTexto(String id) {
         return obterTexto(By.id(id));
+    }
+
+    public String obterValueElemento(String id) {
+        return getDriver().findElement(By.id(id)).getAttribute("value");
     }
 
     public String obterTagName(String tagName) {
