@@ -1,7 +1,6 @@
 package br.sp.vinilourenco.pages;
 
 import br.sp.vinilourenco.core.BasePage;
-import br.sp.vinilourenco.core.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
