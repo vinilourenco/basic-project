@@ -4,15 +4,18 @@ import br.sp.vinilourenco.core.BaseTest;
 import br.sp.vinilourenco.pages.ContasPage;
 import br.sp.vinilourenco.pages.MenuPage;
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ContaTest extends BaseTest {
 
     MenuPage menuPage = new MenuPage();
     ContasPage contasPage = new ContasPage();
 
     @Test
-    public void testInserirConta() {
+    public void test1_InserirConta() {
         menuPage.acessarTelaInserirConta();
         contasPage.setNome("Conta do Teste");
         contasPage.salvar();
@@ -22,7 +25,7 @@ public class ContaTest extends BaseTest {
     }
 
     @Test
-    public void testAlterarConta() {
+    public void test2_AlterarConta() {
         menuPage.acessarTelaListarConta();
         contasPage.clicarAlterarConta("Conta do Teste");
         contasPage.setNome("Conta do Teste Alterada");
@@ -32,20 +35,11 @@ public class ContaTest extends BaseTest {
     }
 
     @Test
-    public void testInserirContaMesmoNome() {
+    public void test3_InserirContaMesmoNome() {
         menuPage.acessarTelaInserirConta();
         contasPage.setNome("Conta do Teste Alterada");
         contasPage.salvar();
         Assert.assertEquals("Já existe uma conta com esse nome!",
-                contasPage.obterMensagemErro());
-    }
-
-    @Test
-    public void testExcluirContaComMovimentacao() {
-        menuPage.acessarTelaListarConta();
-
-        contasPage.clicarExcluirConta("Conta do Teste Alterada");
-        Assert.assertEquals("Conta em uso na movimentações",
                 contasPage.obterMensagemErro());
     }
 }

@@ -5,7 +5,9 @@ import br.sp.vinilourenco.pages.MenuPage;
 import br.sp.vinilourenco.pages.MovimentacaoPage;
 import br.sp.vinilourenco.utils.DataUtils;
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -13,12 +15,13 @@ import java.util.List;
 
 import static br.sp.vinilourenco.utils.DataUtils.obterDataFormatada;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MovimentacaoTest extends BaseTest {
     private MenuPage menuPage = new MenuPage();
     private MovimentacaoPage movPage = new MovimentacaoPage();
 
     @Test
-    public void testInserirMovimentacao() {
+    public void test1_InserirMovimentacao() {
         menuPage.acessarTelaInserirMovimentacao();
 
         movPage.setDataMovimentacao(obterDataFormatada(new Date()));
@@ -34,7 +37,7 @@ public class MovimentacaoTest extends BaseTest {
     }
 
     @Test
-    public void testCamposObrigatorios() {
+    public void test2_CamposObrigatorios() {
         menuPage.acessarTelaInserirMovimentacao();
 
         movPage.salvar();
@@ -47,7 +50,7 @@ public class MovimentacaoTest extends BaseTest {
     }
 
     @Test
-    public void testInserirMovimentacaoFutura() {
+    public void test3_InserirMovimentacaoFutura() {
         menuPage.acessarTelaInserirMovimentacao();
 
         Date dataFutura = DataUtils.obterDataComDiferencaDias(5);
