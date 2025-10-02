@@ -70,8 +70,8 @@ public class BasePage {
         clicarBotao(By.xpath("//button[.='"+texto+"']"));
     }
 
-    public void clicarLink(String id) {
-        getDriver().findElement(By.linkText(id)).click();
+    public void clicarLink(String link) {
+        getDriver().findElement(By.linkText(link)).click();
     }
 
     public String obterTexto(By by) {
