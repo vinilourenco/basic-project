@@ -1,6 +1,7 @@
 package br.sp.vinilourenco.tests;
 
 import br.sp.vinilourenco.core.BaseTest;
+import br.sp.vinilourenco.core.Properties;
 import br.sp.vinilourenco.pages.MenuPage;
 import br.sp.vinilourenco.pages.MovimentacaoPage;
 import br.sp.vinilourenco.utils.DataUtils;
@@ -29,7 +30,7 @@ public class MovimentacaoTest extends BaseTest {
         movPage.setDescricao("Movimentação de Teste");
         movPage.setInteressado("InteressadoQualquer");
         movPage.setValor("500");
-        movPage.setConta("Conta do Teste Alterada");
+        movPage.setConta(Properties.NOME_CONTA_ALTERADA);
         movPage.setStatusPago();
         movPage.salvar();
 
@@ -60,7 +61,7 @@ public class MovimentacaoTest extends BaseTest {
         movPage.setDescricao("Movimentação de Teste");
         movPage.setInteressado("InteressadoQualquer");
         movPage.setValor("500");
-        movPage.setConta("Conta do Teste Alterada");
+        movPage.setConta(Properties.NOME_CONTA_ALTERADA);
         movPage.setStatusPago();
         movPage.salvar();
 

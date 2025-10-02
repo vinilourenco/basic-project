@@ -1,6 +1,7 @@
 package br.sp.vinilourenco.tests;
 
 import br.sp.vinilourenco.core.BaseTest;
+import br.sp.vinilourenco.core.Properties;
 import br.sp.vinilourenco.pages.ContasPage;
 import br.sp.vinilourenco.pages.MenuPage;
 import org.junit.Assert;
@@ -28,7 +29,7 @@ public class ContaTest extends BaseTest {
     public void test2_AlterarConta() {
         menuPage.acessarTelaListarConta();
         contasPage.clicarAlterarConta("Conta do Teste");
-        contasPage.setNome("Conta do Teste Alterada");
+        contasPage.setNome(Properties.NOME_CONTA_ALTERADA);
         contasPage.salvar();
         Assert.assertEquals("Conta alterada com sucesso!",
                 contasPage.obterMensagemSucesso());
@@ -37,7 +38,7 @@ public class ContaTest extends BaseTest {
     @Test
     public void test3_InserirContaMesmoNome() {
         menuPage.acessarTelaInserirConta();
-        contasPage.setNome("Conta do Teste Alterada");
+        contasPage.setNome(Properties.NOME_CONTA_ALTERADA);
         contasPage.salvar();
         Assert.assertEquals("Já existe uma conta com esse nome!",
                 contasPage.obterMensagemErro());
